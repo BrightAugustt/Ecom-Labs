@@ -15,12 +15,23 @@ function registerCustomer_ctr($customer_name, $customer_email, $customer_pass, $
 
      return $add_customer->add_customer($customer_name, $customer_email, $customer_pass, $customer_country, $customer_city, $customer_contact, $customer_image, $user_role);
 
-     header('Location:../Login/login.php');
 }
-//--SELECT--//
+//--verify--//
+function loginCustomer_ctr($customer_email){
 
+    // Create an instance of the class
+    $verify_customer = new general_class();
+
+     return $verify_customer->verify_customer($customer_email);
+
+}
 //--UPDATE--//
+function selectOne_Email_ctr($customer_email){
 
-//--DELETE--//
+    $oneemail = new general_class();
+    return $oneemail->selectOne_Email($customer_email);
+
+
+}
 
 ?>

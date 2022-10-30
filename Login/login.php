@@ -1,23 +1,4 @@
-<!-- <?php
-	
-	// landing/index page
-	// <!DOCTYPE html>
-	// <html>
-	// <head>
-	// 	<meta charset="utf-8">
-	// 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	// 	<title></title>
-	// </head>
-	// <body>
-	// 	<h2>Hello World</h2>
-	// </body>
-	// </html>
-    ?> -->
 
-    <?php
-        
-    
-    ?>
     <!--  -->
     <!DOCTYPE html>
     <html lang="en">
@@ -30,7 +11,7 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="mediaQueries.css">
     </head>
-    
+ 
     <body>
         <div class="container">
             <div class="content">
@@ -41,21 +22,32 @@
                 </div>
                 <div class="form">
                     <h1 class="login">Login</h1>
-                    <form>
+                    <form action="loginprocess.php" onsubmit="validate()" method="POST">
                         <div class="formgroup">
                             <label for="email">Email</label>
-                            <input type="email" placeholder="john@example.com" id="email">
+                            <input type="email" placeholder="john@example.com" id="cemail" name="cemail" required>
                         </div>
                         <div class="formgroup">
                             <label for="password">Password</label>
-                            <input type="password" placeholder="At least 8 characters" id="pass">
+                            <input type="password" placeholder="At least 8 characters" id="pass" name="cpass"required>
                         </div>
-                        <div class="agreeCheck">
-                            <input type="checkbox">
-                            <label class="termsAgreement">By creating an account, you agree to the <a href="#" class="terms">Terms & Conditions</a></label>
-                        </div>
-                        <button>Create an Account</button>
+                       
+                        <button id="button" value="login" name="login">Login</button>
                     </form>
+                    <?php
+                    session_start();
+                    if(!empty($_SESSION['error'])){
+                    ?>
+                    <div style = "color : red; font-weight:600;">
+                    <?php
+                        echo $_SESSION['error'];
+                        
+                        unset($_SESSION['error']); 
+                    } 
+                    ?>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>

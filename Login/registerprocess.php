@@ -16,7 +16,7 @@ if(isset($_POST["register"])){
     $customer_city = $_POST["ccity"];
     $customer_city = $_POST["ccontact"];
     $customer_image = $_POST["cimage"];
-    $user_role = $_POST["urole"];
+    $user_role = 2;
 
     
 
@@ -26,7 +26,7 @@ if(isset($_POST["register"])){
     registerCustomer_ctr($customer_name, $customer_email, $customer_pass, $customer_country, $customer_city, $customer_contact, $customer_image, $user_role);
 
     // redirect to login
-    header('Location:/login.php');
+    header('Location:./login.php');
 
 }else{
     echo "Something went wrong";

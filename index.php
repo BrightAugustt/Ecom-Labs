@@ -1,43 +1,4 @@
-<!-- <?php
-	
-	// landing/index page
-	// <!DOCTYPE html>
-	// <html>
-	// <head>
-	// 	<meta charset="utf-8">
-	// 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	// 	<title></title>
-	// </head>
-	// <body>
-	// 	<h2>Hello World</h2>
-	// </body>
-	// </html>
-?> -->
 
-<?php
-	
-	echo "Hello World"
-?>
-<!-- <?php
-	
-	// landing/index page
-	// <!DOCTYPE html>
-	// <html>
-	// <head>
-	// 	<meta charset="utf-8">
-	// 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	// 	<title></title>
-	// </head>
-	// <body>
-	// 	<h2>Hello World</h2>
-	// </body>
-	// </html>
-    ?> -->
-
-    <?php
-        
-    
-    ?>
     <!--  -->
     <!DOCTYPE html>
     <html lang="en">
@@ -54,17 +15,13 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="info">
-                    <h1 class="name">Gradie</h1>
-                    <p class="grade">Beautiful gradients in seconds.</p>
-                    <img src="iPhone Mockup.png" alt="img">
-                </div>
+                
                 
 				</div>
-				<button>Create an Account</button>
+				<button><a href="./Login/register.php">Register</a></button>
 				<div>
 				</div>
-				<button>Create an Account</button>
+				<button><a href="./Login/login.php">Login</a></button>
 				<div>
                 
                 

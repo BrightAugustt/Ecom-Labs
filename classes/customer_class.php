@@ -43,7 +43,7 @@ class general_class extends db_connection
 		$sql = "Select * FROM `customer` where customer_id = $customer_id";
 
 		// Excute query
-		return$this -> db_fetch_all($sql);
+		return$this -> db_query($sql);
 	}
 
 	//--UPDATE--//
@@ -60,5 +60,38 @@ class general_class extends db_connection
 
 	}
 
+	//--Verify--//
+
+	public function verify_customer($customer_email){
+
+		
+		// Write query
+		$sql = "Select * FROM `customer` where customer_email = '$customer_email'";
+
+		// Excute query
+		return$this -> db_fetch_one($sql);
+
+	}
+
+	public function selectOne_Email($customer_email){
+        //write the sql
+        $sql = "SELECT * FROM `customer` WHERE `customer_email` = '$customer_email'";
+        //execute the sql
+        return $this-> db_fetch_one($sql);
+    }
+
+	public function edit_Customer($customer_id,$customer_name,$customer_country, $customer_city,
+     $customer_contact){
+        $sql = "UPDATE `customer` SET `customer_name`='$customer_name',`customer_country` = '$customer_country',
+        `customer_city` = '$customer_city',`customer_contact` = '$customer_contact' WHERE `customer_id` = '$customer_id'";
+        return $this-> db_query($sql);
+    } 
+	
+    function delete_Customer($customer_id){
+         //write the sql
+         $sql= "DELETE FROM `customer` WHERE `customer_id` = '$customer_id' ";
+         //execute the sql
+         return $this-> db_query($sql);
+    }
 }
 ?>
