@@ -20,6 +20,7 @@ if(isset($_POST["login"])){
                        $_SESSION['id']= $login['customer_pass'];
                        $_SESSION['custmer_name'] = $result['cname'];
                        $_SESSION['customer_email'] = $result['cemail'];
+                       $_SESSION['user_role'] = $login['user_role'];
                          // redirect to login
                             header('Location:../Admin/admin.php');
             }
@@ -28,8 +29,9 @@ if(isset($_POST["login"])){
                 session_start();
 
                 $_SESSION['id']= $login['customer_pass'];
-                $_SESSION['custmer_name'] = $result['cname'];
-                $_SESSION['customer_email'] = $result['cemail'];
+                $_SESSION['custmer_name'] = $login['cname'];
+                $_SESSION['customer_email'] = $login['cemail'];
+                $_SESSION['user_role'] = $login['user_role'];
                 // redirect to login
                    header('Location:home.php');
             }
