@@ -14,8 +14,7 @@ if(isset($_POST["register"])){
     $customer_pass = password_hash($customer_pass,PASSWORD_DEFAULT);
     $customer_country = $_POST["ccountry"];
     $customer_city = $_POST["ccity"];
-    $customer_city = $_POST["ccontact"];
-    $customer_image = $_POST["cimage"];
+    $customer_contact = $_POST["ccontact"];
     $user_role = 2;
 
     

@@ -16,11 +16,11 @@ if(isset($_POST["login"])){
         if($login != false){
             if (password_verify($customer_pass,$login['customer_pass']) and $login['user_role']==1 ){
 
-                      
+                      session_start();
                        $_SESSION['id']= $login['customer_pass'];
                        $_SESSION['custmer_name'] = $result['cname'];
                        $_SESSION['customer_email'] = $result['cemail'];
-                       $_SESSION['user_role'] = $login['user_role'];
+                       $_SESSION['user_role'] = 1;
                          // redirect to login
                             header('Location:../Admin/admin.php');
             }
