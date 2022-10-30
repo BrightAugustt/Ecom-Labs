@@ -18,12 +18,18 @@ if(isset($_POST["login"])){
 
                       
                        $_SESSION['id']= $login['customer_pass'];
+                       $_SESSION['custmer_name'] = $result['cname'];
+                       $_SESSION['customer_email'] = $result['cemail'];
                          // redirect to login
                             header('Location:../Admin/admin.php');
             }
 
             else if (password_verify($customer_pass,$login['customer_pass']) and $login['user_role']!=1){
+                session_start();
+
                 $_SESSION['id']= $login['customer_pass'];
+                $_SESSION['custmer_name'] = $result['cname'];
+                $_SESSION['customer_email'] = $result['cemail'];
                 // redirect to login
                    header('Location:home.php');
             }
