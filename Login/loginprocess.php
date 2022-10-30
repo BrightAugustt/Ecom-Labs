@@ -25,7 +25,7 @@ if(isset($_POST["login"])){
             else if (password_verify($customer_pass,$login['customer_pass']) and $verify['user_role']!=1){
                 $_SESSION['id']= $login['customer_pass'];
                 // redirect to login
-                   header('Location:../index.php');
+                   header('Location:home.php');
             }
             
 
