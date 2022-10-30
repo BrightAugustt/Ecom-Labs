@@ -14,7 +14,7 @@ if(isset($_POST["login"])){
     $verify = selectOne_Email_ctr($customer_email);
 
         if($login != false){
-            if (password_verify($customer_pass,$login['customer_pass']) and $verify['user_role']==1 ){
+            if (password_verify($customer_pass,$login['customer_pass']) and $login['user_role']==1 ){
 
                       
                        $_SESSION['id']= $login['customer_pass'];
@@ -22,7 +22,7 @@ if(isset($_POST["login"])){
                             header('Location:../Admin/admin.php');
             }
 
-            else if (password_verify($customer_pass,$login['customer_pass']) and $verify['user_role']!=1){
+            else if (password_verify($customer_pass,$login['customer_pass']) and $login['user_role']!=1){
                 $_SESSION['id']= $login['customer_pass'];
                 // redirect to login
                    header('Location:home.php');
