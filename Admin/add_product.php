@@ -2,10 +2,10 @@
 <?php
 
 session_start();
-if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['user_role']!= 1) )
-   {
-      header('Location:../index.php');
-   };
+// if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and empty($_SESSION['user_role']!= 1) )
+//    {
+//       header('Location:../index.php');
+//    };
    require("../controllers/product_controller.php");
 ?>
    
@@ -35,8 +35,8 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                     <form action="../actions/addproductprocess.php" onsubmit="validate()" method="POST">
 
                     <div class="formgroup">
-                            <label for="product name">Select Category</label>
-                            <select name="product_cat">
+                            <label for="">Select Category</label>
+                            <select name='product_cat'>
 
                             <?php
                             $cat = selectall_category_ctr();
