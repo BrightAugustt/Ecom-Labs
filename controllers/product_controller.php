@@ -78,6 +78,17 @@ function selectall_category_ctr(){
      return $selectall_category->selectall_category();
 
 }
+
+function selectall_product_ctr(){
+
+    // Create an instance of the product class. 
+    $selectall_product = new product_class();
+
+     return $selectall_product->selectall_product();
+
+}
+
+
 function selectonecategory_ctr($cat_id){
 
     // Create an instance of the product class. 

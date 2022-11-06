@@ -90,6 +90,14 @@ class product_class extends db_connection
 		return $this -> db_fetch_all($sql);
 	}
 
+	public function selectall_product(){
+
+		// Write query
+		$sql =  "SELECT * FROM `products`";
+		// Return  
+		return $this -> db_fetch_all($sql);
+	}
+
 	public function selectone_brand($brand_id){
 
 		// Write query

@@ -88,6 +88,40 @@ include("../controllers/product_controller.php")
     </table>
 </div>
 
+<div class="category"> 
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th scope="col">Product Name</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                function displayproductCtr(){
+
+                    $display = selectall_category_ctr();
+                    for ($i =0; $i < count($product); $i++){
+                        echo "<tr>";
+                        echo "<td>". $product[$i]['product_title']. "<td>";
+                        echo "<th><form action = 'update_product.php' method= 'POST'>
+                        <input type='submit' value='Update'  name='updatecategory'>
+                        <input type='hidden' name='cat_id' value='" . $product[$i]['cat_id'] . "'></form></th>";
+
+                        echo "<th><form action='delete_brand.php' method='POST'>
+                        <input type='submit' value='delete'  name='delete'>
+                        <input type='hidden' name='cat_id' value='" . $product[$i]['cat_id'] . "'></form></th>";
+                        echo "</tr>";
+                    }
+                }	   
+                displayCtr();
+                ?>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
 
