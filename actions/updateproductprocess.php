@@ -27,7 +27,7 @@ if(isset($_POST["updateproduct"])){
         if(!file_exists("../$directory/$subdir/")){
             // Create a new directory if file does not exist
             @mkdir("../$directory/$subdir/",0777);
-            echo("New folder created");
+            // echo("New folder created");
             move_uploaded_file($tempname,$folder);
             return $folder;
         }else{
