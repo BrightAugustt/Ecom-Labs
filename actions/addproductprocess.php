@@ -19,11 +19,11 @@ if(isset($_POST["addproduct"])){
 
     function upload($directory,$subdir,$tempname,$image){
 
-        $folder = "../$directory/$subdir/".$image;
+        $folder = "../images/products/".$image;
 
-        if(!file_exists("../$directory/$subdir/")){
+        if(!file_exists("../images/products/")){
             // Create a new directory if file does not exist
-            @mkdir("../$directory/$subdir/",0777);
+            @mkdir("../images/products/",0777);
             echo("New folder created");
             move_uploaded_file($tempname,$folder);
             return $folder;
