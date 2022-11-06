@@ -5,7 +5,7 @@ include("../controllers/product_controller.php");
 // Collecting form data
 // GET is used by default so define the type of method
 // POST is used for secure information transmission.
-if(isset($_POST["updatecategory"])){
+if(isset($_POST["updateproduct"])){
 
     // Variable to capture the name value for each user input.
     $cat_id = $_POST["cat_id"];

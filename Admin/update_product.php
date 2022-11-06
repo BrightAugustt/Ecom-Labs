@@ -36,7 +36,7 @@ if (isset($_POST['updateproduct'])){
                 </div>
                 <div class="form" >
                     <h1 class="login">Update brand</h1>
-                    <form action="../actions/updatecategoryprocess.php" onsubmit="validate()" method="POST">
+                    <form action="../actions/updateproductprocess.php" onsubmit="validate()" method="POST">
 
                         <div class="formgroup">
                         <input type="hidden" name="product_id" value=" <?php  echo $result[0]['product_id']; ?> ">
