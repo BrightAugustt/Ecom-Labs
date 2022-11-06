@@ -17,13 +17,14 @@ if(isset($_POST["addproduct"])){
     $image = $_FILES['product_image']["name"];
     $tmp = $_FILES['product_image']["tmp_name"];
 
+
     function upload($directory,$subdir,$tempname,$image){
 
-        $folder = "../images/products/".$image;
+        $folder = "../$directory/$subdir/".$image;
 
-        if(!file_exists("../images/products/")){
+        if(!file_exists("../$directory/$subdir/")){
             // Create a new directory if file does not exist
-            @mkdir("../images/products/",0777);
+            @mkdir("../$directory/$subdir/",0777);
             echo("New folder created");
             move_uploaded_file($tempname,$folder);
             return $folder;
@@ -33,6 +34,7 @@ if(isset($_POST["addproduct"])){
         }
         return false;
         }
+
 
     
     $product_image = upload("Images","product",$tmp,$image);
