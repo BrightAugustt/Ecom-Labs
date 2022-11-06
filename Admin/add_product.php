@@ -76,7 +76,7 @@ session_start();
 
                         <div class="formgroup">
                             <label for="brand name">Product Image</label>
-                            <input type="text" placeholder="Cars" id="product_image" name="product_image" required>
+                            <input type="file" placeholder="Cars" id="product_image" name="product_image" required>
                         </div>
 
                         <div class="formgroup">
