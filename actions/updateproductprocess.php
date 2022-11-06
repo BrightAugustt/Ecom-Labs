@@ -39,13 +39,12 @@ if(isset($_POST["updateproduct"])){
 
     $product_image = upload("Images","product",$tmp,$image);
     
-    $productupdate=  updateProducts_ctr($product_id,$product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
+    updateProducts_ctr($product_id,$product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
 
-    if($productupdate == true){
+   
 
         header('Location:../Admin/view.php');
-        unlink($prevImage);
-    }
+
 
 }else{
     echo "Something went wrong";
