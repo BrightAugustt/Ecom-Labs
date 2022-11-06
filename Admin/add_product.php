@@ -60,30 +60,30 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 
                         <div class="formgroup">
                             <label for="product name">Product Title</label>
-                            <input type="text" placeholder="Cars" id="cat_name" name="cat_name" required>
+                            <input type="text" placeholder="Cars" id="product_title" name="product_title" required>
                         </div>
 
                         <div class="formgroup">
                             <label for="brand name">Product price</label>
-                            <input type="text" placeholder="Cars" id="cat_name" name="cat_name" required>
+                            <input type="text" placeholder="Cars" id="product_price" name="product_price" required>
                         </div>
 
                         <div class="formgroup">
                             <label for="brand name">Product Description</label>
-                            <input type="text" placeholder="Cars" id="cat_name" name="cat_name" required>
+                            <input type="text" placeholder="Cars" id="product_description" name="product_description" required>
                         </div>
 
                         <div class="formgroup">
                             <label for="brand name">Product Image</label>
-                            <input type="text" placeholder="Cars" id="cat_name" name="cat_name" required>
+                            <input type="text" placeholder="Cars" id="product_image" name="product_image" required>
                         </div>
 
                         <div class="formgroup">
                             <label for="brand name">Product Keyword</label>
-                            <input type="text" placeholder="Cars" id="cat_name" name="cat_name" required>
+                            <input type="text" placeholder="Cars" id="product_keywords" name="product_keywords" required>
                         </div>
                        
-                        <button id="button" value="addcategory" name="addcategory">Add Category</button>
+                        <button id="button" value="addproduct" name="addproduct">Add Product</button>
                     </form>
                 </div>
             </div>
