@@ -42,9 +42,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                             $cat = selectall_category_ctr();
                             $brand = selectall_brand_ctr();
 
-                                foreach($cat as $category){
+                                foreach($cat as $item){
                             ?>
-                            <option value=<?php  echo($category['cat_id'])?>><?php  echo($category['cat_name'])?></option>
+                            <option value=<?php  echo($item['cat_id'])?>><?php  echo($item['cat_name'])?></option>
                             <?php }?>
                             </select>
                             <br>
@@ -52,9 +52,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                             <label for="product name">Select Brand</label>
                             <select name="product_brand">
                                 <?php
-                                foreach($brand as $brand){
+                                foreach($brand as $item){
                                 ?>
-                                <option value=<?php  echo($brand['brand_id'])?>><?php  echo($brand['brand_name'])?></option>
+                                <option value=<?php  echo($item['brand_id'])?>><?php  echo($item['brand_name'])?></option>
                                 <?php }?>
                         </div>
 
