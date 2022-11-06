@@ -19,7 +19,7 @@ include("../controllers/product_controller.php")
     <title>Brand Display</title>
 </head>
 <body>
-
+<button>Back to Add Page</button>
 <div class="brand"> 
     <table class="table">
 
