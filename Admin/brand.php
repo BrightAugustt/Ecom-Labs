@@ -47,7 +47,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     <img src="brands.jpg" alt="Avatar" style="width:60%">
     <div class="container">
         <p>Add new product</p>
-        <button name="addproduct" id="addproduct" class="button"><a href="add_category.php">Add New Product</a></button>
+        <button name="addproduct" id="addproduct" class="button"><a href="add_product.php">Add New Product</a></button>
     </div>
     </div>
 </body>
