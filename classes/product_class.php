@@ -106,5 +106,29 @@ class product_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
+	public function selectone_product($product_id){
+
+		// Write query
+		$sql =  "SELECT * FROM `products` WHERE `product_id` = '$product_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function search_product($product_brand){
+
+		// Write query
+		$sql =  "SELECT * FROM products WHERE product_title LIKE '%$product_brand%'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function delete_product($product_id){
+
+		// Write query
+		$sql =  "DELETE FROM `products` WHERE `product_id`= '$product_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
 }
 ?>

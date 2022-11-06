@@ -96,6 +96,33 @@ function selectonebrand_ctr($brand_id){
 
 }
 
+function selectoneproduct_ctr($product_id){
+
+    // Create an instance of the product class. 
+    $selectone= new product_class();
+
+     return $selectone->selectone_product($product_id);
+
+}
+
+function deleteproduct_ctr($product_id){
+
+    // Create an instance of the product class. 
+    $selectone= new product_class();
+
+     return $selectone->delete_product($product_id);
+
+}
+
+function searchproduct_ctr($product_brand){
+
+    // Create an instance of the product class. 
+    $selectone= new product_class();
+
+     return $selectone->search_product($product_brand);
+
+}
+
 
 
 
