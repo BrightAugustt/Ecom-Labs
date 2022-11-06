@@ -102,13 +102,17 @@ include("../controllers/product_controller.php")
             <?php
                 function displayproductCtr(){
 
-                    $display = selectall_category_ctr();
+                    $product = selectall_product_ctr();
                     for ($i =0; $i < count($product); $i++){
                         echo "<tr>";
                         echo "<td>". $product[$i]['product_title']. "<td>";
+                        echo "<td>". $product[$i]['product_price']. "<td>";
+                        echo "<td>". $product[$i]['product_desc']. "<td>";
+                        echo "<td><img src='" . $product[$i]['product_image'] . "' height='200px'></td>";
+                        echo "<td>" . $product[$i]['product_keywords'] . "</td>";
                         echo "<th><form action = 'update_product.php' method= 'POST'>
-                        <input type='submit' value='Update'  name='updatecategory'>
-                        <input type='hidden' name='cat_id' value='" . $product[$i]['cat_id'] . "'></form></th>";
+                        <input type='submit' value='Update'  name='updateproduct'>
+                        <input type='hidden' name='product_id' value='" . $product[$i]['product_id'] . "'></form></th>";
 
                         echo "<th><form action='delete_brand.php' method='POST'>
                         <input type='submit' value='delete'  name='delete'>
@@ -116,7 +120,7 @@ include("../controllers/product_controller.php")
                         echo "</tr>";
                     }
                 }	   
-                displayCtr();
+                displayproductCtr();
                 ?>
         </tbody>
     </table>
