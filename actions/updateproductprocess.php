@@ -39,12 +39,14 @@ if(isset($_POST["updateproduct"])){
 
     $product_image = upload("Images","product",$tmp,$image);
     
-    updateProducts_ctr($product_id,$product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
+    $updateproducts=updateProducts_ctr($product_id,$product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
 
    
+        if($updateproducts== true){
+            header('Location:../Admin/view.php');
 
-        header('Location:../Admin/view.php');
-
+        }
+       
 
 }else{
     echo "Something went wrong";
