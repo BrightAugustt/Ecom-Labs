@@ -6,6 +6,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
    {
       header('Location:../index.php');
    };
+   require("../controllers/product_controller.php");
 ?>
    
     <!--  -->
