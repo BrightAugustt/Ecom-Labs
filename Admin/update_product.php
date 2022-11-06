@@ -69,7 +69,7 @@ if (isset($_POST['updateproduct'])){
 
                         <div class="formgroup">
                             <label for="brandname">Product image</label>
-                            <input type="text" placeholder="<?php echo $result[0]['product_image']; ?>" id="product_image" name="product_image" required>
+                            <input type="file" placeholder="<?php echo $result[0]['product_image']; ?>" id="product_image" name="product_image" required>
                         </div>
 
                         <div class="formgroup">
