@@ -31,9 +31,6 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     echo $product_id;
     print_r($product);
     
-    
-    
-
     ?>
    <div>
    <img src="../Background.png" class="img-fluid" alt="Responsive image">
