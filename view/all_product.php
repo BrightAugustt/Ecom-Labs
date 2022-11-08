@@ -53,22 +53,22 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     </div> -->
  
 <!-- Bootstrap -->
-    <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
+
         <?php 
            $product =  selectall_product_ctr();
             foreach($product as $item){   
         ?>
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
         <h5 class="card-title"><?php echo($item['product_title'])?></h5>
         <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
         <p class="card-text"><?php echo ($item['product_desc'])?></p>
         <a href="#" class="btn btn-primary">Add to cart</a>
-
+        </div>
         <?php
             }
         ?>
-    </div>
 
 </div>
 </body>
