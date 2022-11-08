@@ -58,6 +58,15 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
            $product =  selectall_product_ctr();  
             foreach($product as $item){ 
         ?>
+        <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+        </div>
+        <button type="button" class="btn btn-primary" name="search">
+            <i class="fas fa-search"></i>
+        </button>
+        </div>
             <div class="card" style="width: 18rem;">
            
             <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">

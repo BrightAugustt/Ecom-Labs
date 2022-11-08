@@ -122,13 +122,23 @@ class product_class extends db_connection
 		return $this->db_fetch_one($sql);
 	}
 
-	public function search_product($product_brand){
+	public function searchone_product($product_brand){
 
 		// Write query
 		$sql =  "SELECT * FROM products WHERE product_title LIKE '%$product_brand%'";
 		// Return  
 		return $this->db_fetch_one($sql);
 	}
+
+	public function search_product($input){
+
+		// Write query
+		$sql =  "SELECT * FROM products WHERE product_title LIKE '%$input%'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+
 
 	public function delete_product($product_id){
 
