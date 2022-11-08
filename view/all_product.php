@@ -51,43 +51,27 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         <button name="addproduct" id="addproduct" class="button"><a href="add_product.php">Add New Product</a></button>
     </div>
     </div> -->
-    <?php
-                function displayproductCtr(){
-
-                    $product = selectall_product_ctr();
-                    for ($i =0; $i < count($product); $i++){
-                        echo "<tr>";
-                        echo "<td>". $product[$i]['product_title']. "<td>";
-                        echo "<td>". $product[$i]['product_price']. "<td>";
-                        echo "<td>". $product[$i]['product_desc']. "<td>";
-                        echo "<td><img src='" . $product[$i]['product_image'] . "' height='50px'></td>";
-                        
-                        echo "<td>" . $product[$i]['product_keywords'] . "</td>";
-                        echo "<th><form action = 'update_product.php' method= 'POST'>
-                        <input type='submit' value='Update'  name='updateproduct'>
-                        <input type='hidden' name='product_id' value='" . $product[$i]['product_id'] . "'></form></th>";
-
-                        echo "<th><form action='delete_brand.php' method='POST'>
-                        <input type='submit' value='delete'  name='delete'>
-                        <input type='hidden' name='cat_id' value='" . $product[$i]['cat_id'] . "'></form></th>";
-                        echo "</tr>";
-                    }
-                }	   
-                displayproductCtr();
-                ?>
+ 
 <!-- Bootstrap -->
     <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
         <?php 
-            function displayproductCtr();
+            function displayproductCtr(){
+                $product = selectall_product_ctr();
                 for ($i = 0; $i < count($product); $i++)     
         ?>
-        <h5 class="card-title"><?php $products[$i]['product_title']?></h5>
-        <h5 class="card-title"><?php $products[$i]['product_price']?></h5>
-        <p class="card-text"><?php $products[$i]['product_desc']?></p>
+        <h5 class="card-title"><?php $product[$i]['product_title'];?></h5>
+        <h5 class="card-title"><?php $product[$i]['product_price'];?></h5>
+        <p class="card-text"><?php $product[$i]['product_desc'];?></p>
         <a href="#" class="btn btn-primary">Add to cart</a>
+
+        <?php
+            }
+        displayproductCtr();
+        ?>
     </div>
+
 </div>
 </body>
 </html>
