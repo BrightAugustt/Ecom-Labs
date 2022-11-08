@@ -17,27 +17,6 @@ if(isset($_POST["addproduct"])){
     $image = $_FILES['product_image']['name'];
     $tmp = $_FILES['product_image']['tmp_name'];
 
-    // // Storing image
-    // $imgExt = explode('.',$image);
-    // $imgActualExt = strtolower(end($imgExt));
-    // $allowed = array('jpg','jpeg','png');
-    // $imgError = $_FILES['product_image']['error'];
-    // $imgSize = $_FILES['product_image']['size'];
-
-    // if(in_array($imgActualExt,$allowed))
-    // {
-    //     if($imgError === 0){
-    //         if($imgSize < 1000000 ){
-    //             $fileNameNew = uniqid('',true).".".$imgActualExt;
-    //             $fileDestination = '../images/products'.$fileNameNew;
-    //             move_uploaded_file($tmp,$fileDestination);
-                
-    //             header('Location:../Admin/view.php?uploadsuccess');
-    //         }
-    //     }
-    // }else{
-    //     echo "Upload failed, check image format!";
-    // }
 
     function upload($directory,$subdir,$tempname,$image){
 
