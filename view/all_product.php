@@ -59,7 +59,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         ?>
         <div class="card" style="width: 18rem;">
         <a href="single_product.php?">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <img class="card-img-top" src="../Background.png" alt="Card image cap">
         </a>
         <div class="card-body">
             <?php foreach($product as $item){  ?>
