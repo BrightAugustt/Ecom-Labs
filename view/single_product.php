@@ -19,6 +19,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 </head>
 <body>
     <?php
+    $product_id = $_GET['product_id'];
     $product =  selectoneproduct_ctr($product_id); 
     print_r($product);
     foreach($product as $item){
