@@ -4,7 +4,7 @@ session_start();
 if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
     //   header('Location:../index.php');
    };
-   include("../controllers/product_controller.php")
+   include("../controllers/product_controller.php");
 ?>
 
 <!DOCTYPE html>
@@ -59,9 +59,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             foreach($product as $item){ 
         ?>
         <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
+        <form class="form-inline" action="">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
         </form>
         </nav>
         </div>

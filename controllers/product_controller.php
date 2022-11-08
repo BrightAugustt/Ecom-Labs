@@ -125,12 +125,12 @@ function deleteproduct_ctr($product_id){
 
 }
 
-function searchproduct_ctr($input){
+function searchproduct_ctr($product_brand){
 
     // Create an instance of the product class. 
     $selectone= new product_class();
 
-     return $selectone->search_product($input);
+     return $selectone->search_product($product_brand);
 
 }
 
