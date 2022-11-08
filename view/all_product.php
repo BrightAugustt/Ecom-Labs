@@ -61,7 +61,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             foreach($product as $item){   
         ?>
         <h5 class="card-title"><?php echo($item['product_title'])?></h5>
-        <h5 class="card-title">GHC<?php echo($item['product_price'])?></h5>
+        <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
         <p class="card-text"><?php echo ($item['product_desc'])?></p>
         <a href="#" class="btn btn-primary">Add to cart</a>
 
