@@ -2,7 +2,7 @@
  include("../controllers/product_controller.php");
 
 //  Collect search input from user
-if(isset($_POST['search'])){
+if(isset($_POST['submit'])){
     $product_brand = $_POST['search'];
     
     $productSearch =  searchproduct_ctr($product_brand);
