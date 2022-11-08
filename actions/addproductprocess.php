@@ -31,7 +31,8 @@ if(isset($_POST["addproduct"])){
                 $fileNameNew = uniqid('',true).".".$imgActualExt;
                 $fileDestination = '../images/upload'.$fileNameNew;
                 move_uploaded_file($tmp,$fileDestination);
-                header('Location:../Admin/view.php?uploadsuccess');
+                
+                // header('Location:../Admin/view.php?uploadsuccess');
             }
         }
     }else{
@@ -59,7 +60,7 @@ if(isset($_POST["addproduct"])){
     
     // $product_image = upload("Images","product",$tmp,$image);
     // Call a controller
-    addProducts_ctr($product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
+     addProducts_ctr($product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
 
     // redirect to login
     header('Location:../Admin/view.php');
