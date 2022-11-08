@@ -30,6 +30,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     $product =  selectoneproduct_ctr($product_id); 
     echo $product_id;
     print_r($product);
+    echo $product['product_title'];
     // for ($i = 0; $i < count($product); $i++){
     //     echo $product[$i]['product_title'];
     // }
