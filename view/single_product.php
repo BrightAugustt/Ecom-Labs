@@ -23,7 +23,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     $product =  selectoneproduct_ctr($product_id); 
     echo $product_id;
     print_r($product);
-    print_r($product[3]);
+    print_r($product['product_title']);
     
     ?>
    <!-- <div>
