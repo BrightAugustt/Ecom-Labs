@@ -61,9 +61,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                 $product = selectall_product_ctr();
                 for ($i = 0; $i < count($product); $i++)     
         ?>
-        <h5 class="card-title"><?php $product[$i]['product_title'];?></h5>
-        <h5 class="card-title"><?php $product[$i]['product_price'];?></h5>
-        <p class="card-text"><?php $product[$i]['product_desc'];?></p>
+        <h5 class="card-title"><?php echo $product[$i]['product_title'];?></h5>
+        <h5 class="card-title"><?php echo $product[$i]['product_price'];?></h5>
+        <p class="card-text"><?php echo $product[$i]['product_desc'];?></p>
         <a href="#" class="btn btn-primary">Add to cart</a>
 
         <?php
