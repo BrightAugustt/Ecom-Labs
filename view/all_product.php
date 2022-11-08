@@ -57,18 +57,16 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
         <?php 
-            function displayproductCtr(){
-                $product = selectall_product_ctr();
-                for ($i = 0; $i < count($product); $i++)     
+           $product =  selectall_product_ctr();
+            foreach($product as $item){   
         ?>
-        <h5 class="card-title"><?php echo $product[$i]['product_title'];?></h5>
-        <h5 class="card-title"><?php echo $product[$i]['product_price'];?></h5>
-        <p class="card-text"><?php echo $product[$i]['product_desc'];?></p>
+        <h5 class="card-title"><?php echo($item['product_title'])?></h5>
+        <h5 class="card-title"><?php echo($item['product_price'])?></h5>
+        <p class="card-text"><?php echo ($item['product_desc'])?></p>
         <a href="#" class="btn btn-primary">Add to cart</a>
 
         <?php
             }
-        displayproductCtr();
         ?>
     </div>
 
