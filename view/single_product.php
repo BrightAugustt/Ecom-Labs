@@ -20,9 +20,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 <body>
     <?php
     $product =  selectoneproduct_ctr($product_id); 
-    
-    echo $product[0]['product_title'];
-
+    print_r($product);
     foreach($product as $item){
         echo($item['product_title']);
     }
