@@ -18,11 +18,11 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     <title>Admin Panel</title>
 </head>
 <body>
-   <div class="admin">
+   <!-- <div class="admin">
    <h2>WELCOME ADMIN</h2>
    <h3>Make Changes you desire</h3>
-    </div>
-    <div class="card">
+    </div> -->
+    <!-- <div class="card">
     <img src="brands.jpg" alt="Avatar" style="width:60%">
     <div class="container">
         <p>Add new brands to your company</p>
@@ -31,9 +31,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         <br>
         <button name="addcategory" id="addcategory" class="button"><a href="view.php">View Brand</a></button>
     </div>
-    </div>
+    </div> -->
 
-    <div class="card">
+    <!-- <div class="card">
     <img src="brands.jpg" alt="Avatar" style="width:60%">
     <div class="container">
         <p>Product category of your brand</p>
@@ -50,14 +50,43 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         <p>Add new product</p>
         <button name="addproduct" id="addproduct" class="button"><a href="add_product.php">Add New Product</a></button>
     </div>
-    </div>
+    </div> -->
+    <?php
+                function displayproductCtr(){
+
+                    $product = selectall_product_ctr();
+                    for ($i =0; $i < count($product); $i++){
+                        echo "<tr>";
+                        echo "<td>". $product[$i]['product_title']. "<td>";
+                        echo "<td>". $product[$i]['product_price']. "<td>";
+                        echo "<td>". $product[$i]['product_desc']. "<td>";
+                        echo "<td><img src='" . $product[$i]['product_image'] . "' height='50px'></td>";
+                        
+                        echo "<td>" . $product[$i]['product_keywords'] . "</td>";
+                        echo "<th><form action = 'update_product.php' method= 'POST'>
+                        <input type='submit' value='Update'  name='updateproduct'>
+                        <input type='hidden' name='product_id' value='" . $product[$i]['product_id'] . "'></form></th>";
+
+                        echo "<th><form action='delete_brand.php' method='POST'>
+                        <input type='submit' value='delete'  name='delete'>
+                        <input type='hidden' name='cat_id' value='" . $product[$i]['cat_id'] . "'></form></th>";
+                        echo "</tr>";
+                    }
+                }	   
+                displayproductCtr();
+                ?>
 <!-- Bootstrap -->
     <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <?php 
+            function displayproductCtr();
+                for ($i = 0; $i < count($product); $i++)     
+        ?>
+        <h5 class="card-title"><?php $products[$i]['product_title']?></h5>
+        <h5 class="card-title"><?php $products[$i]['product_price']?></h5>
+        <p class="card-text"><?php $products[$i]['product_desc']?></p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
     </div>
 </div>
 </body>
