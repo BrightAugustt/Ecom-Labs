@@ -29,7 +29,7 @@ if(isset($_POST["addproduct"])){
         if($imgError === 0){
             if($imgSize < 1000000 ){
                 $fileNameNew = uniqid('',true).".".$imgActualExt;
-                $fileDestination = '../images/upload'.$fileNameNew;
+                $fileDestination = '../images/products'.$fileNameNew;
                 move_uploaded_file($tmp,$fileDestination);
                 
                 // header('Location:../Admin/view.php?uploadsuccess');
