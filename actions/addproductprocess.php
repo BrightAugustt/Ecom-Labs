@@ -18,7 +18,7 @@ if(isset($_POST["addproduct"])){
     $tmp = $_FILES['product_image']['tmp_name'];
 
 
-    function upload($directory,$subdir,$tempname,$image){
+    function upload_file($directory,$subdir,$tempname,$image){
 
         $folder = "../$directory/$subdir/".$image;
 
@@ -37,7 +37,7 @@ if(isset($_POST["addproduct"])){
 
 
     
-    $product_image = upload("Images","product",$tmp,$image);
+    $product_image = upload_file("images","products",$tmp,$image);
     // Call a controller
      addProducts_ctr($product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
 
