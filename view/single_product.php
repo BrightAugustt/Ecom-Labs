@@ -19,7 +19,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 </head>
 <body>
     <?php
-    $product =  selectall_product_ctr(); 
+    $product =  selectoneproduct_ctr($product_id); 
     
     echo $product['product_title'];
 

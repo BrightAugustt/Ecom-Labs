@@ -56,9 +56,10 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 
         <?php 
            $product =  selectall_product_ctr();  
+            foreach($product as $item){ 
         ?>
             <div class="card" style="width: 18rem;">
-            <?php foreach($product as $item){  ?>
+           
             <a href="single_product.php?">
             <img class="card-img-top" src="../Background.png" alt="Card image cap">
             </a>
