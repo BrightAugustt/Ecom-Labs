@@ -34,9 +34,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     //     echo $product[$i]['product_title'];
     // }
 
-    foreach ($product as $item){
-        echo $item['product_title'];
-    }
+    // foreach ($product as $item){
+    //     echo $item['product_title'];
+    // }
         
     
 
