@@ -71,7 +71,8 @@ session_start();
 
                         <div class="formgroup">
                             <label for="brand name">Product Description</label>
-                            <input type="textarea" placeholder="Cars" id="product_description" name="product_description" required>
+                            <!-- <input type="textarea" placeholder="Cars" id="product_desc" name="product_desc" required> -->
+                            <textarea id="product_desc" name="product_desc" rows="4" cols="50">
                         </div>
 
                         <div class="formgroup">
