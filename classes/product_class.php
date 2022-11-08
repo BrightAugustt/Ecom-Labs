@@ -119,7 +119,7 @@ class product_class extends db_connection
 		// Write query
 		$sql =  "SELECT * FROM `products` WHERE `product_id` = '$product_id'";
 		// Return  
-		return $this->db_fetch_all($sql);
+		return $this->db_fetch_one($sql);
 	}
 
 	public function search_product($product_brand){
@@ -127,7 +127,7 @@ class product_class extends db_connection
 		// Write query
 		$sql =  "SELECT * FROM products WHERE product_title LIKE '%$product_brand%'";
 		// Return  
-		return $this->db_fetch_all($sql);
+		return $this->db_fetch_one($sql);
 	}
 
 	public function delete_product($product_id){
