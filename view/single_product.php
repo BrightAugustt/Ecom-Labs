@@ -17,15 +17,31 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     <link rel="stylesheet" href="all_product.css">
     <title>Admin Panel</title>
 </head>
+<style>
+
+.h3{
+    text-align: center;
+}
+</style>
 <body>
     <?php 
     $product_id = $_GET['product_id'];
     $product =  selectoneproduct_ctr($product_id); 
-    echo $product_id;
-    print_r($product);
-    print_r($product['product_title']);
+    // echo $product_id;
+    // print_r($product);
+    // print_r($product['product_title']);
     
     ?>
+    <div class="card mb-3">
+        <img class="card-img-top" src="../Background.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><?php print_r($product['product_title'])?></h5>
+            <p class="card-text"><?php print_r($product['product_desc'])?></p>
+            <p class="card-text"><small class="text-muted"><?php print_r($product['product_price'])?></small></p>
+        </div>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+   
    <!-- <div>
    <img src="../Background.png" class="img-fluid" alt="Responsive image">
    </div> -->
