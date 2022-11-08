@@ -32,6 +32,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     // print_r($product['product_title']);
     
     ?>
+    <h3>Product View</h3>
     <div class="card mb-3">
         <img class="card-img-top" src="../Background.png" alt="Card image cap">
         <div class="card-body">
