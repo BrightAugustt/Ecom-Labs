@@ -18,26 +18,26 @@ if(isset($_POST["addproduct"])){
     $tmp = $_FILES['product_image']['tmp_name'];
 
 
-    function upload_file($directory,$subdir,$tempname,$image){
+    // function upload_file($directory,$subdir,$tempname,$image){
 
-        $folder = "../$directory/$subdir/".$image;
+    //     $folder = "../$directory/$subdir/".$image;
 
-        if(!file_exists("../$directory/$subdir/")){
-            // Create a new directory if file does not exist
-            @mkdir("../$directory/$subdir/",0777);
-            echo("New folder created");
-            move_uploaded_file($tempname,$folder);
-            return $folder;
-        }else{
-            move_uploaded_file($tempname,$folder);
-            return $folder;
-        }
-        return false;
-        }
+    //     if(!file_exists("../$directory/$subdir/")){
+    //         // Create a new directory if file does not exist
+    //         @mkdir("../$directory/$subdir/",0777);
+    //         echo("New folder created");
+    //         move_uploaded_file($tempname,$folder);
+    //         return $folder;
+    //     }else{
+    //         move_uploaded_file($tempname,$folder);
+    //         return $folder;
+    //     }
+    //     return false;
+    //     }
 
 
     
-    $product_image = upload_file("images","products",$tmp,$image);
+    // $product_image = upload_file("images","products",$tmp,$image);
     // Call a controller
      addProducts_ctr($product_cat, $product_brand,$product_title,$product_price,$product_desc,$product_image,$product_keywords);
 

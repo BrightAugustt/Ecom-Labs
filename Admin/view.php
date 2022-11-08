@@ -108,8 +108,7 @@ include("../controllers/product_controller.php")
                         echo "<td>". $product[$i]['product_title']. "<td>";
                         echo "<td>". $product[$i]['product_price']. "<td>";
                         echo "<td>". $product[$i]['product_desc']. "<td>";
-
-                        echo "<td><img src='" . $product[$i]['product_image'] . "' height='200px'></td>";
+                        echo "<td><img src='" . $product[$i]['product_image'] . "' height='50px'></td>";
                         
                         echo "<td>" . $product[$i]['product_keywords'] . "</td>";
                         echo "<th><form action = 'update_product.php' method= 'POST'>
