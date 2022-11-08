@@ -20,11 +20,12 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 <body>
     <?php
     $product_id = $_GET['product_id'];
-    $product =  selectoneproduct_ctr($product_id); 
-    print_r($product);
-    foreach($product as $item){
-        echo($item['product_title']);
-    }
+    // $product =  selectoneproduct_ctr($product_id); 
+    echo $product_id;
+    // foreach($product as $item){
+    //     echo($item['product_title']);
+    // }
+
     ?>
    <div>
    <!-- <img src="../Background.png" class="img-fluid" alt="Responsive image"> -->
