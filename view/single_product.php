@@ -4,7 +4,7 @@ session_start();
 if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
     //   header('Location:../index.php');
    };
-//    include("../controllers/product_controller.php")
+   include("../controllers/product_controller.php")
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +20,11 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
 <body>
     <?php
     $product_id = $_GET['product_id'];
-    // $product =  selectoneproduct_ctr($product_id); 
+    $product =  selectoneproduct_ctr($product_id); 
     echo $product_id;
-    // foreach($product as $item){
-    //     echo($item['product_title']);
-    // }
+    foreach($product as $item){
+        echo($item['product_title']);
+    }
 
     ?>
    <div>
