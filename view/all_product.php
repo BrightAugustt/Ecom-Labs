@@ -59,7 +59,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             foreach($product as $item){ 
         ?>
         <nav class="navbar navbar-light bg-light">
-        <form class="form-inline" action="">
+        <form class="form-inline" action="../functions/searc_results.php">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
         </form>
