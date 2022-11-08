@@ -18,15 +18,27 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     <title>Admin Panel</title>
 </head>
 <body>
-    <?php
+
+                    <!-- $product = selectall_product_ctr();
+                    for ($i =0; $i < count($product); $i++){
+                        echo "<tr>";
+                        echo "<td>". $product[$i]['product_title']. "<td>";
+                        echo "<td>". $product[$i]['product_price']. "<td>";
+                        echo "<td>". $product[$i]['product_desc']. "<td>";
+    <?php 
     $product_id = $_GET['product_id'];
     $product =  selectoneproduct_ctr($product_id); 
     echo $product_id;
     print_r($product);
-    foreach($product as $item){
-        echo($item['product_title']);
-        
+    for ($i = 0; $i < count($product); $i++){
+        echo $product[$i]['product_title'];
     }
+
+    foreach ($product as $item){
+        echo $item['product_title'];
+    }
+        
+    
 
     ?>
    <div>
