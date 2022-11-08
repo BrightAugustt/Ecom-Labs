@@ -32,7 +32,7 @@ if(isset($_POST["addproduct"])){
                 $fileDestination = '../images/products'.$fileNameNew;
                 move_uploaded_file($tmp,$fileDestination);
                 
-                // header('Location:../Admin/view.php?uploadsuccess');
+                header('Location:../Admin/view.php?uploadsuccess');
             }
         }
     }else{
