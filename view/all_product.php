@@ -34,7 +34,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         </nav>
         </div>
 
-        <form action="../functions/searc_results.php" method="POST">
+        <form action="../functions/add_to_cart.php" method="POST">
             <div class="card" style="width: 18rem;">
            
                 <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
