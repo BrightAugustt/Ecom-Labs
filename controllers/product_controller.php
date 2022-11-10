@@ -134,6 +134,33 @@ function searchproduct_ctr($product_brand){
 
 }
 
+function addcart_ctr($ip_add,$c_id,$qty){
+
+    // Create an instance of the product class. 
+    $addcart= new product_class();
+
+     return $addcart->add_cart($ip_add,$c_id,$qty);
+
+}
+
+function selectallcart_ctr(){
+
+    // Create an instance of the product class. 
+    $selectcart= new product_class();
+
+     return $selectcart->selectall_cart();
+
+}
+
+function selectonecart_ctr($p_id){
+
+    // Create an instance of the product class. 
+    $selectone= new product_class();
+
+     return $selectone->selectone_cart($p_id);
+
+}
+
 
 
 

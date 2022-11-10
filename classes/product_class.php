@@ -148,5 +148,45 @@ class product_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
+	public function deleteproduct_cart($p_id){
+
+		// Write query
+		$sql =  "DELETE FROM `cart` WHERE `p_id`='$p_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function add_cart($ip_add,$c_id,$qty){
+
+		// Write query
+		$sql = "INSERT INTO `cart`(`ip_add`, `c_id`, `qty`) VALUES ('$ip_add','$c_id','$qty')";
+		// Return  
+		return $this -> db_query($sql);
+	}
+
+	public function updateproduct_cart($p_id,$ip_add,$c_id,$qty){
+
+		// Write query
+		$sql = "UPDATE `cart` SET `ip_add`='$ip_add',`c_id`='$c_id',`qty`='$qty' WHERE `p_id`='$p_id'";
+		// Return  
+		return $this -> db_query($sql);
+	}
+
+	public function selectall_cart(){
+
+		// Write query
+		$sql =  "SELECT * FROM `cart`";
+		// Return  
+		return $this -> db_fetch_all($sql);
+	}
+
+	public function selectone_cart($p_id){
+
+		// Write query
+		$sql =  "SELECT * FROM `cart` WHERE `p_id` = '$p_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
 }
 ?>

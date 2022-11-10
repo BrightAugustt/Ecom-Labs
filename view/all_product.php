@@ -5,6 +5,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     //   header('Location:../index.php');
    };
    include("../controllers/product_controller.php");
+   include("../functions/add_to_cart.php");
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +27,14 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             foreach($product as $item){ 
         ?>
         <nav class="navbar navbar-light bg-light">
-        <form class="form-inline" action="../functions/searc_results.php">
+        <form class="form-inline" action="../functions/searc_results.php" method="POST">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
         </form>
         </nav>
         </div>
+
+        <form action="../functions/searc_results.php" method="POST">
             <div class="card" style="width: 18rem;">
            
                 <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
@@ -41,16 +44,11 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                     <h5 class="card-title"><?php echo($item['product_title'])?></h5>
                     <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                     <p class="card-text"><?php echo ($item['product_desc'])?></p>
-                    <div class="input-group mb-3" style="width: 130px;">
-                    <div class="input-group-prepend">
-                        <button class="input-group-text decrement-btn">-</button>
-                    </div>
-                    <input type="text" class="form-control text-center bg-white input-qty" value="1" disabled>
-                    <div class="input-group-append">
-                        <button class="input-group-tex increment-btn">+</button>
-                    </div>
-                    </div>
-                    <a href="#" class="btn btn-primary addToCartBtn" value="<?php $item['product_id']?>">Add to cart</a>
+                    <input type ="hidden" name="product_title" value="<?php $item['product_title']?>">
+                    <input type ="hidden" name="product_price" value="<?php $item['product_price']?>">
+                    <input type ="hidden" name="product_desc" value="<?php $item['product_desc']?>">
+                    <input type="number" class="form-control text-center bg-white input-qty" value="1" name="qty">
+                    <a href="#" class="btn btn-primary addToCartBtn" value="<?php $item['product_id']?>" name="addToCart">Add to cart</a>
 
                     <?php
                     }
@@ -59,7 +57,9 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
        
     
             </div>
-<script>
+
+        </form>
+<!-- <script>
         $(document).ready(function (){
 
             $('.increment-btn').click(function(e){
@@ -105,6 +105,16 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             });
 
         });
-       </script>
+       </script> -->
+
+        <!-- <div class="input-group mb-3" style="width: 130px;">
+                    <div class="input-group-prepend">
+                        <button class="input-group-text decrement-btn">-</button>
+                    </div>
+                    <input type="text" class="form-control text-center bg-white input-qty" value="1" disabled>
+                    <div class="input-group-append">
+                        <button class="input-group-tex increment-btn">+</button>
+                    </div>
+                    </div> -->
 </body>
 </html>
