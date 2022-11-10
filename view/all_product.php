@@ -37,7 +37,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                 <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
                 <img class="card-img-top" src="../Background.png" alt="Card image cap">
                 </a>
-                <div class="card-body">
+                <div class="card-body product_data">
                     <h5 class="card-title"><?php echo($item['product_title'])?></h5>
                     <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                     <p class="card-text"><?php echo ($item['product_desc'])?></p>
