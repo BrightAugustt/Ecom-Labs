@@ -1,0 +1,3 @@
+$(.addToCartBtn).click(function (e)){
+    
+}

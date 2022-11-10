@@ -18,39 +18,6 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     <title>Admin Panel</title>
 </head>
 <body>
-   <!-- <div class="admin">
-   <h2>WELCOME ADMIN</h2>
-   <h3>Make Changes you desire</h3>
-    </div> -->
-    <!-- <div class="card">
-    <img src="brands.jpg" alt="Avatar" style="width:60%">
-    <div class="container">
-        <p>Add new brands to your company</p>
-        <button name="addbrand" id="addbrand" class="button"><a href="add_brand.php"> Product Brand</a></button>
-        <br>
-        <br>
-        <button name="addcategory" id="addcategory" class="button"><a href="view.php">View Brand</a></button>
-    </div>
-    </div> -->
-
-    <!-- <div class="card">
-    <img src="brands.jpg" alt="Avatar" style="width:60%">
-    <div class="container">
-        <p>Product category of your brand</p>
-        <button name="addcategory" id="addcategory" class="button"><a href="add_category.php">Add Category</a></button>
-        <br>
-        <br>
-        <button name="addcategory" id="addcategory" class="button"><a href="view.php">View Category</a></button>
-    </div>
-    </div>
-
-    <div class="card">
-    <img src="brands.jpg" alt="Avatar" style="width:60%">
-    <div class="container">
-        <p>Add new product</p>
-        <button name="addproduct" id="addproduct" class="button"><a href="add_product.php">Add New Product</a></button>
-    </div>
-    </div> -->
  
 <!-- Bootstrap -->
 
@@ -74,7 +41,16 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             <h5 class="card-title"><?php echo($item['product_title'])?></h5>
             <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
             <p class="card-text"><?php echo ($item['product_desc'])?></p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+            </div>
+            </div>
+            <a href="#" class="btn btn-primary addToCartBtn">Add to cart</a>
 
             <?php
             }
