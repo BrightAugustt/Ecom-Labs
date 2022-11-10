@@ -4,8 +4,8 @@ session_start();
 if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
     //   header('Location:../index.php');
    };
-   include("../controllers/product_controller.php");
-   include("../functions/add_to_cart.php");
+include("../controllers/product_controller.php");
+include("../functions/add_to_cart.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,21 +22,21 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
  
 <!-- Bootstrap -->
 
-        <?php 
-           $product =  selectall_product_ctr();  
-            foreach($product as $item){ 
-        ?>
+        
         <nav class="navbar navbar-light bg-light">
         <form class="form-inline" action="../functions/searc_results.php" method="POST">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
         </form>
         </nav>
-        </div>
 
-        <form action="../functions/add_to_cart.php" method="POST">
+        <?php 
+           $product =  selectall_product_ctr();  
+            foreach($product as $item){ 
+        ?>
+
+        <!-- <form action="../functions/add_to_cart.php" method="POST"> -->
             <div class="card" style="width: 18rem;">
-           
                 <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
                 <img class="card-img-top" src="../Background.png" alt="Card image cap">
                 </a>
@@ -54,11 +54,8 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                     }
                     ?>
                 </div>
-       
-    
             </div>
-
-        </form>
+        <!-- </form> -->
 <!-- <script>
         $(document).ready(function (){
 
