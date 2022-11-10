@@ -41,13 +41,13 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             <h5 class="card-title"><?php echo($item['product_title'])?></h5>
             <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
             <p class="card-text"><?php echo ($item['product_desc'])?></p>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" style="width: 130px;">
             <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
+                <button class="input-group-text decrement-btn">-</button>
             </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <input type="text" class="form-control text-center bg-white input-qty" value="1" disabled>
             <div class="input-group-append">
-                <span class="input-group-text">.00</span>
+                <button class="input-group-tex increment-btn">+</button>
             </div>
             </div>
             <a href="#" class="btn btn-primary addToCartBtn">Add to cart</a>
@@ -57,7 +57,27 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             ?>
             </div>
        
+    <script>
+        $(document).ready(function(){
 
+            $('.increment-btn').click(function(e){
+                e.preventDefault();
+
+                var qty = $('input-qty').val();
+                alert(qty);
+
+                // var value =parseInt(qty,10);
+
+                // value = isNaN(value) ? 0 : value;
+                // if(value < 10){
+                //     value++;
+                //     $('.input-qty').val(value);
+                // }
+
+            });
+
+        });
+       </script>
 </div>
 </body>
 </html>
