@@ -44,9 +44,6 @@ include("../functions/add_to_cart.php");
                     <h5 class="card-title"><?php echo($item['product_title'])?></h5>
                     <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                     <p class="card-text"><?php echo ($item['product_desc'])?></p>
-                    <input type ="hidden" name="product_title" value="<?php $item['product_title']?>">
-                    <input type ="hidden" name="product_price" value="<?php $item['product_price']?>">
-                    <input type ="hidden" name="product_desc" value="<?php $item['product_desc']?>">
                     <input type="number" class="form-control text-center bg-white input-qty" value="1" name="qty">
                     <a href="#" class="btn btn-primary addToCartBtn" value="<?php $item['product_id']?>" name="addToCart">Add to cart</a>
 
