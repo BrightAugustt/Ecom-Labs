@@ -32,27 +32,49 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         </form>
         </nav>
         </div>
+        <form>
             <div class="card" style="width: 18rem;">
-           
-            <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
-            <img class="card-img-top" src="../Background.png" alt="Card image cap">
-            </a>
-            <div class="card-body product_data">
-            <h5 class="card-title"><?php echo($item['product_title'])?></h5>
-            <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
-            <p class="card-text"><?php echo ($item['product_desc'])?></p>
-            <div class="input-group mb-3" style="width:130px">
-                <button class="input-group-text decrement-btn">-</button>
-                <input type="number" class="form-control text-center bg-white input-qty" value="1">
-                <button class="input-group-text increment-btn">+</button>
-            </div>
-            <a href="#" class="btn btn-primary addToCartBtn">Add to cart</a>
+            
+                <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
+                <img class="card-img-top" src="../Background.png" alt="Card image cap">
+                </a>
+                <div class="card-body product_data">
+                <h5 class="card-title"><?php echo($item['product_title'])?></h5>
+                <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
+                <p class="card-text"><?php echo ($item['product_desc'])?></p>
+                <input type="hidden" id="pid" value="<?php echo $item["product_id"]?>">
+                <a href="#" class="btn btn-primary addToCartBtn" onclick="loadDoc(<?php echo $item['product_id']?>)">Add to cart</a>
 
-            <?php
-            }
-            ?>
+                <?php
+                }
+                ?>
+                </div>
+    
             </div>
-       <!-- <script>
+        </form>
+            <script>
+                function loadDoc(id){
+                    dataString = 'inputbx' + id;
+                    console.log(id);
+                
+
+                $.ajax({
+                    type: "POST",
+                    url:"../actions/add_to_cart.php",
+                    data: dataString,
+                    cache:false,
+                    success:function(result){
+                        alert(result);
+                    }
+                    
+                });
+                
+            }
+            </script>
+        
+        
+        ?>
+<!-- <script>
         $(document).ready(function(){
 
             $('.increment-btn').click(function(e){
@@ -74,7 +96,5 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         });
        </script> -->
        <script src="custom.js"></script>
-
-</div>
 </body>
 </html>

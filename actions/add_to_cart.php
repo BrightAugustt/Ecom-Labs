@@ -1,4 +1,5 @@
 <?php
+session_start();
  include("../controllers/product_controller.php");
 
 //  Collect search input from user
@@ -19,6 +20,7 @@ if(isset($_POST['addToCart'])){
     }
     
     $cart = addcart_ctr($ip_add,$c_id,$qty);
+    var_dump($_SESSION['cart']);
 
     header('Location: ../view/product_search_result.php?product_id='.$product_brand);
 }
