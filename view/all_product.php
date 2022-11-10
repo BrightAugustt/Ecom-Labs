@@ -4,8 +4,7 @@ session_start();
 if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
     //   header('Location:../index.php');
    };
-include("../controllers/product_controller.php");
-include("../functions/add_to_cart.php");
+   include("../controllers/product_controller.php");
 ?>
 
 <!DOCTYPE html>
@@ -27,86 +26,55 @@ include("../functions/add_to_cart.php");
             foreach($product as $item){ 
         ?>
         <nav class="navbar navbar-light bg-light">
-        <form class="form-inline" action="../functions/searc_results.php" method="POST">
+        <form class="form-inline" action="../functions/searc_results.php">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
         </form>
         </nav>
-
-        <!-- <form action="../functions/add_to_cart.php" method="POST"> -->
+        </div>
             <div class="card" style="width: 18rem;">
-                <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
-                <img class="card-img-top" src="../Background.png" alt="Card image cap">
-                </a>
-                <div class="card-body product_data">
-                    <h5 class="card-title"><?php echo($item['product_title'])?></h5>
-                    <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
-                    <p class="card-text"><?php echo ($item['product_desc'])?></p>
-                    <input type="number" class="form-control text-center bg-white input-qty" value="1" name="qty">
-                    <a href="#" class="btn btn-primary addToCartBtn" value="<?php $item['product_id']?>" name="addToCart">Add to cart</a>
-
-                    <?php
-                    }
-                    ?>
-                </div>
+           
+            <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
+            <img class="card-img-top" src="../Background.png" alt="Card image cap">
+            </a>
+            <div class="card-body product_data">
+            <h5 class="card-title"><?php echo($item['product_title'])?></h5>
+            <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
+            <p class="card-text"><?php echo ($item['product_desc'])?></p>
+            <div class="input-group mb-3" style="width:130px">
+                <button class="input-group-text decrement-btn">-</button>
+                <input type="number" class="form-control text-center bg-white input-qty" value="1">
+                <button class="input-group-text increment-btn">+</button>
             </div>
-        <!-- </form> -->
-<!-- <script>
-        $(document).ready(function (){
+            <a href="#" class="btn btn-primary addToCartBtn">Add to cart</a>
+
+            <?php
+            }
+            ?>
+            </div>
+       <!-- <script>
+        $(document).ready(function(){
 
             $('.increment-btn').click(function(e){
                 e.preventDefault();
 
-                var qty = $(this).closest('.product_data').find('input-qty').val();
+                var qty = $('input-qty').val();
                 alert(qty);
 
-                var value =parseInt(qty,10);
+                // var value =parseInt(qty,10);
 
-                value = isNaN(value) ? 0 : value;
-                if(value < 10){
-                    value++;
-                    $(this).closest('.product_data').find('input-qty').val(value);
-                }
-
-            });
-
-            $('.decrement-btn').click(function(e){
-                e.preventDefault();
-
-                var qty = $(this).closest('.product_data').find('input-qty').val();
-                alert(qty);
-
-                var value =parseInt(qty,10);
-
-                value = isNaN(value) ? 0 : value;
-                if(value > 1){
-                    value--;
-                    $(this).closest('.product_data').find('input-qty').val(value);
-                }
-
-            });
-
-            $('.addToCartBtn').click(function (e){
-                e.preventDefault();
-
-                var qty =   $(this).closest('.product_data').find('input-qty').val(value);
-                var product_id = $(this).val();
-
-                alert(product_id);
+                // value = isNaN(value) ? 0 : value;
+                // if(value < 10){
+                //     value++;
+                //     $('.input-qty').val(value);
+                // }
 
             });
 
         });
        </script> -->
+       <script src="custom.js"></script>
 
-        <!-- <div class="input-group mb-3" style="width: 130px;">
-                    <div class="input-group-prepend">
-                        <button class="input-group-text decrement-btn">-</button>
-                    </div>
-                    <input type="text" class="form-control text-center bg-white input-qty" value="1" disabled>
-                    <div class="input-group-append">
-                        <button class="input-group-tex increment-btn">+</button>
-                    </div>
-                    </div> -->
+</div>
 </body>
 </html>
