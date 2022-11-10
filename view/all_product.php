@@ -58,7 +58,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
             </div>
        
     <script>
-        $(document).ready(function(){
+        $(document).ready(function (){
 
             $('.increment-btn').click(function(e){
                 e.preventDefault();
