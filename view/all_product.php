@@ -56,8 +56,10 @@ include("../settings/core.php");
         </form>
             <script>
                 function loadDoc(id){
-                    dataString = 'inputbx' + id;
+                    inputbx=document.getElementByID("pin").value;
                     console.log(id);
+                    dataString = 'pid=' +id +'&inputbx' + inputbx;
+                    
                 
 
                 $.ajax({
