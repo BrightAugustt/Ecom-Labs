@@ -4,7 +4,8 @@ session_start();
 if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and empty($_SESSION['customer_email']) and $_SESSION['user_role']!= 1)   {
     //   header('Location:../index.php');
    };
-   include("../controllers/product_controller.php");
+include("../controllers/product_controller.php");
+include("../settings/core.php");
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         </form>
         </nav>
         </div>
-        <form>
+        <form action="../actions/add_to_cart.php" method="POST">
             <div class="card" style="width: 18rem;">
             
                 <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
@@ -44,6 +45,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
                 <p class="card-text"><?php echo ($item['product_desc'])?></p>
                 <input type="hidden" id="pid" value="<?php echo $item["product_id"]?>">
                 <a href="#" class="btn btn-primary addToCartBtn" onclick="loadDoc(<?php echo $item['product_id']?>)">Add to cart</a>
+                <input type="hidden" name="qty" value=1>
 
                 <?php
                 }
@@ -74,27 +76,6 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
         
         
         ?>
-<!-- <script>
-        $(document).ready(function(){
 
-            $('.increment-btn').click(function(e){
-                e.preventDefault();
-
-                var qty = $('input-qty').val();
-                alert(qty);
-
-                // var value =parseInt(qty,10);
-
-                // value = isNaN(value) ? 0 : value;
-                // if(value < 10){
-                //     value++;
-                //     $('.input-qty').val(value);
-                // }
-
-            });
-
-        });
-       </script> -->
-       <script src="custom.js"></script>
 </body>
 </html>

@@ -148,10 +148,12 @@ class product_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
-	public function deleteproduct_cart($p_id){
+
+// Cart section
+	public function delete_cart($p_id,$c_id){
 
 		// Write query
-		$sql =  "DELETE FROM `cart` WHERE `p_id`='$p_id'";
+		$sql =  "DELETE FROM `cart` WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
 		// Return  
 		return $this->db_fetch_all($sql);
 	}
@@ -164,13 +166,30 @@ class product_class extends db_connection
 		return $this -> db_query($sql);
 	}
 
-	public function updateproduct_cart($p_id,$ip_add,$c_id,$qty){
+	public function increase_cart($p_id,$c_id){
 
 		// Write query
-		$sql = "UPDATE `cart` SET `ip_add`='$ip_add',`c_id`='$c_id',`qty`='$qty' WHERE `p_id`='$p_id'";
+		$sql = "UPDATE `cart` SET qty=(qty + 1 )  WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
 		// Return  
 		return $this -> db_query($sql);
 	}
+
+	public function decrease_cart($p_id,$c_id){
+
+		// Write query
+		$sql = "UPDATE `cart` SET qty=(qty - 1 )  WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
+		// Return  
+		return $this -> db_query($sql);
+	}
+
+	public function update_cart($p_id,$c_id){
+
+		// Write query
+		$sql = "UPDATE `cart` SET qty=qty+1   WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
+		// Return  
+		return $this -> db_query($sql);
+	}
+
 
 	public function selectall_cart(){
 
@@ -180,13 +199,84 @@ class product_class extends db_connection
 		return $this -> db_fetch_all($sql);
 	}
 
-	public function selectone_cart($p_id){
+	public function selectone_cart($c_id){
 
 		// Write query
-		$sql =  "SELECT * FROM `cart` WHERE `p_id` = '$p_id'";
+		$sql =  "SELECT * FROM `cart` WHERE `c_id` = '$c_id'";
 		// Return  
 		return $this->db_fetch_all($sql);
 	}
+
+	public function countcart_quantity($c_id){
+
+		// Write query
+		$sql =  "SELECT SUM(qty) FROM `cart` WHERE `c_id` = '$c_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function updatecart_quantity($p_id,$c_id){
+
+		$sql = "UPDATE `cart` SET qty=qty-1 WHERE p_id = '$p_id' AND `c_id`='$c_id'";
+		// Return  
+		return $this -> db_query($sql);
+	}
+
+	public function checkcart_quantity($qty,$p_id,$c_id){
+
+		// Write query
+		$sql =  "SELECT `qty` FROM `cart` WHERE `p_id` = '$p_id' AND `c_id`='$c_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function getuser_cart($c_id){
+
+		// Write query
+		$sql =  "SELECT * FROM `cart` inner join `products` on  cart.p_id = products.product_id WHERE `c_id`= '$c_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function getuser_details($c_id){
+
+		// Write query
+		$sql =  "SELECT * FROM customer WHERE customer_id= '$c_id' LIMIT 1";
+		// Return  
+		return $this->db_fetch_one($sql);
+	}
+
+	public function delteuser_from_cart($c_id){
+
+		// Write query
+		$sql =  "DELETE FROM `cart` WHERE `c_id`='$c_id'";
+		// Return  
+		return $this->db_query($sql);
+	}
+
+	public function select_already_existing_products($p_id,$c_id){
+
+		// Write query
+		$sql =  "SELECT `p_id`, `c_id` FROM `cart` WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+	public function getfrom_cart($a){
+
+		// Write query
+		$sql =  "SELECT products.product_price*cart.qty ,cart.qty, products.product_id,products.product_title ,products.product_desc, products.product_image,products.product_price FROM cart  
+		INNER JOIN products ON cart.p_id = products.product_id WHERE cart.c_id ='$a'";
+		// Return  
+		return $this->db_fetch_all($sql);
+	}
+
+
+
+
+	
+
+
 
 }
 ?>

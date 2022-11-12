@@ -161,6 +161,100 @@ function selectonecart_ctr($p_id){
 
 }
 
+function deletecart_ctr($p_id,$c_id){
+
+    // Create an instance of the product class. 
+    $selectone= new product_class();
+
+     return $selectone->delete_cart($p_id,$c_id);
+
+}
+
+function increasecart_ctr($p_id,$c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->increase_cart($p_id,$c_id);
+
+}
+
+function decreasecart_ctr($p_id,$c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->decrease_cart($p_id,$c_id);
+
+}
+
+function getuser_cart_ctr($c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->getuser_cart($c_id);
+
+}
+
+function selectuser_ctr($c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->getuser_details($c_id);
+
+}
+
+function deleteuser__from_cart_ctr($c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->delteuser_from_cart($c_id);
+
+}
+
+function updatecart_qty_ctr($p_id,$c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->updatecart_quantity($p_id,$c_id);
+
+}
+
+function count_cart_ctr($c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->countcart_quantity($c_id);
+
+}
+
+function select_already_existing_products_ctr($p_id,$c_id){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->select_already_existing_products($p_id,$c_id);
+
+}
+
+function get_from_cart_ctr($a){
+
+    // Create an instance of the product class. 
+    $increasecart= new product_class();
+
+     return $increasecart->getfrom_cart($a);
+
+}
+
+
+
+
+
 
 
 
