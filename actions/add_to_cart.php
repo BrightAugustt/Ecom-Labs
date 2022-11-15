@@ -6,7 +6,7 @@ session_start();
 if(isset($_POST['addToCart'])){
 
    $p_id = $_POST['p_id'];
-   $cid = $_SESSION['id'];
+   $c_id = $_SESSION['id'];
    $ip_add = $_SERVER['REMOTE_ADDR'];
    $qty = $_POST['qty'];
     
