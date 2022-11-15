@@ -2,7 +2,7 @@
 
 include("../controllers/product_controller.php");
 session_start();
-$cid = $_SESSION['id'];
+$c_id = $_SESSION['customer_id'];
 $count = count_cart_ctr($cid);
 ?>
 
