@@ -251,6 +251,44 @@ function get_from_cart_ctr($a){
 
 }
 
+function insert_orders_ctr($customer_id,$invoice_no, $order_date){
+    $add = new product_class();
+    return $add->insert_orders($customer_id,$invoice_no, $order_date);
+}
+
+function insert_payment_ctr($amt,$customer_id,$order_id, $payment_date){
+    $add = new product_class();
+    return $add->insert_payment($amt,$customer_id,$order_id, $payment_date);
+}
+
+function get_order_id_ctr(){
+    $add = new product_class();
+    return $add->get_order_id();
+}
+
+function get_order_date_ctr(){
+    $add = new product_class();
+    return $add->get_order_date();
+}
+
+function insert_orderdetails_ctr($order_id,$product_id,$qty){
+    $add = new product_class();
+    return $add->insert_orderdetails($order_id,$product_id,$qty);
+}
+
+function delete_after_pay_ctr($cid){
+    $add = new product_class();
+    return $add->delete_after_pay_cart($cid);
+}
+
+function get_cart_details_ctr($c_id){
+    $add = new product_class();
+    return $add->get_cart_details($c_id);
+}
+
+
+
+
 
 
 

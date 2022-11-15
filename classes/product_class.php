@@ -271,11 +271,56 @@ class product_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
+	public function insert_orders($customer_id,$invoice_no, $order_date){
 
+		// Write query
+		$sql =  "INSERT INTO `orders`(`customer_id`, `invoice_no`, `order_date`, `order_status`) VALUES ('$customer_id','$invoice_no','$order_date','success')";
+		// Return  
+		return $this->db_query($sql);
+	}
 
+	public function insert_payment($amt,$customer_id,$order_id, $payment_date){
 
+		// Write query
+		$sql =  "INSERT INTO `payment`(`amt`, `customer_id`, `order_id`, `currency`, `payment_date`) 
+        VALUES ('$amt','$customer_id','$order_id','GHS','$payment_date')";
+		// Return  
+		return $this->db_query($sql);
+	}
+
+	function get_order_id(){
+		$sql="SELECT order_id from orders ORDER BY order_id DESC LIMIT 1";
+		return $this->db_fetch_one($sql);
 	
+	}
 
+	function get_order_date(){
+		$sql="SELECT order_date from orders ORDER BY order_id DESC LIMIT 1";
+		return $this->db_fetch_one($sql);
+	}
+
+
+	function insert_orderdetails($order_id,$product_id,$qty){
+
+		$sql="INSERT INTO `orderdetails`(`order_id`,`product_id`, `qty`) 
+		VALUES ('$order_id','$product_id','$qty')";
+		
+		return $this->db_query($sql);
+	}
+
+	function delete_after_pay_cart($cid){
+		$sql = "DELETE FROM `cart` WHERE `c_id`='$cid'";
+	
+		return $this->db_query($sql);
+	}
+
+
+	function get_cart_details($c_id){
+
+	$sql="SELECT `p_id`, `qty` FROM `cart` WHERE c_id='$c_id'";
+		
+	return $this->db_fetch_one($sql);
+	}
 
 
 }
