@@ -154,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="tab4">
 								<div class="pay_info">
 									<div class="col-md-6 tab-grid">
-										<img class="pp-img" src="../images/paystack.png" alt="Image Alternative text" title="Image Title">
+										<img class="pp-img" src="../Background.png" alt="Image Alternative text" title="Image Title">
 										<p>Important: You will be redirected to Paystack's website to securely complete your payment.</p><a class="btn btn-primary">Checkout via Paypal</a>
 									</div>
 									<div class="col-md-6">

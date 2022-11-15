@@ -1,9 +1,9 @@
 <?php
-require('../controllers/cart_controller.php');
+require('../controllers/product_controller.php');
 session_start();
 $cid = $_SESSION['customer_id'];
 $email =$_POST['email'];
-$amount =$_POST['amount'];
+$amount =$_POST['amount5'];
 
 $url = "https://api.paystack.co/transaction/verify/".$_GET['reference'];
 
