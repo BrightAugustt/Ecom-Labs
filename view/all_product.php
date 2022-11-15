@@ -43,7 +43,7 @@ include("../settings/core.php");
                 <h5 class="card-title"><?php echo($item['product_title'])?></h5>
                 <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                 <p class="card-text"><?php echo ($item['product_desc'])?></p>
-                <input type="hidden" id="pid" value="<?php echo $item["product_id"]?>">
+                <input type="hidden" name="p_id" value="<?php echo $item["product_id"]?>">
                 <button type="submit" name="addToCart">Add to cart</button>
                 <input type="hidden" name="qty" value=1>
 

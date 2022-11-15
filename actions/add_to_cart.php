@@ -5,7 +5,7 @@ session_start();
 //  Collect search input from user
 if(isset($_POST['addToCart'])){
 
-   $p_id = $_POST['inputbx'];
+   $p_id = $_POST['p_id'];
    $cid = $_SESSION['customer_id'];
    $ip_add = $_SERVER["REMOTE_ADDR"];
    $qty = $_POST['qty'];
