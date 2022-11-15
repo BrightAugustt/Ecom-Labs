@@ -77,7 +77,7 @@ include("../settings/core.php");
             </script> -->
         
         
-        ?>
+        
 
 </body>
 </html>
