@@ -4,7 +4,7 @@ author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php require ("../controllers/cart_controller.php");
+<?php require ("../controllers/product_controller.php");
  //require ("../controllers/cart_controller.php");
 session_start();
 $cid =$_SESSION['customer_id'];
@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="ads-grid_shop">
 		<div class="shop_inner_inf">
 			<div class="error_page">
-				<h4>THANK YOU FOR SHOPPING WITH ALOC</h4>
+				<h4>THANK YOU FOR SHOPPING WITH Essentials.</h4>
 				<p>GO BACK TO FIND NEW ART WORKS</p>
 				<form action="search_results.php" method="GET">
 					<input class="serch" type="search" name="Search" placeholder="Search here" required="">
