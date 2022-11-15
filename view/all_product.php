@@ -47,8 +47,8 @@ $count = count_cart_ctr($cid);
                 <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                 <p class="card-text"><?php echo ($item['product_desc'])?></p>
                 <input type="hidden" name="p_id" value="<?php echo $item["product_id"]?>">
-                <button type="submit" name="addToCart" >Add to cart</button>
                 <input type="hidden" name="qty" value=1>
+                <button type="submit" name="addToCart" >Add to cart</button>
 
                 <?php
                 }

@@ -7,11 +7,16 @@ if(isset($_POST['addToCart'])){
 
    $p_id = $_POST['p_id'];
    $cid = $_SESSION['id'];
-   $ip_add = $_SERVER['REMOVE_ADDR'];
+   $ip_add = $_SERVER['REMOTE_ADDR'];
    $qty = $_POST['qty'];
     
-   addcart_ctr($p_id,$ip_add,$c_id,$qty);
-   header('Location: ../view/cart.php');
+   $add = addcart_ctr($p_id,$ip_add,$c_id,$qty);
+   if($add == true){
+      header('Location: ../view/cart.php');
+   }else{
+      echo "couldn't add to cart."
+   }
+  
 }
 
 ?>
