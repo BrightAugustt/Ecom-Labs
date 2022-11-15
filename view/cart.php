@@ -33,7 +33,7 @@ $count = count_cart_ctr($cid);
     foreach($cart as $item){
     ?>
       <!-- <th scope="row">1</th> -->
-      <td><img src="<?php echo ($item['product_image']); ?>" alt="" style="width: 50px;"> <?php echo($item['product_title']) ?></td>
+      <td><img src="../Background.png" alt="" style="width: 50px;"> <?php echo($item['product_title']) ?></td>
       <td><?php echo('$'); echo($item['products.product_price*cart.qty']);?></td>
       <td>
         <button id="pid" onclick="loadDoc1(<?php echo $item['product_id'];?>)"></button>
