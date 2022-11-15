@@ -5,9 +5,10 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     //   header('Location:../index.php');
    };
 include("../controllers/product_controller.php");
-// include("../settings/core.php");
+include("../settings/core.php");
 $cid = $_SESSION['customer_id'];
 $count = count_cart_ctr($cid);
+$customer=$_GET 
 ?>
 
 <!DOCTYPE html>
