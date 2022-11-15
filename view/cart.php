@@ -27,6 +27,7 @@ session_start();
   <tbody>
     <tr>
     <?php
+    $_GET['customer_id'];
     $cart=  get_from_cart_ctr($_SESSION['customer_id']);
     foreach($cart as $item){
     ?>

@@ -5,7 +5,7 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
     //   header('Location:../index.php');
    };
 include("../controllers/product_controller.php");
-include("../settings/core.php");
+// include("../settings/core.php");
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ include("../settings/core.php");
                 <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                 <p class="card-text"><?php echo ($item['product_desc'])?></p>
                 <input type="hidden" name="p_id" value="<?php echo $item["product_id"]?>">
-                <button type="submit" name="addToCart">Add to cart</button>
+                <button type="submit" name="addToCart" >Add to cart</button>
                 <input type="hidden" name="qty" value=1>
 
                 <?php
