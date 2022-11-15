@@ -6,6 +6,8 @@ if (empty($_SESSION['customer_id']) and empty($_SESSION['customer_name']) and em
    };
 include("../controllers/product_controller.php");
 // include("../settings/core.php");
+$cid = $_SESSION['customer_id'];
+$count = count_cart_ctr($cid);
 ?>
 
 <!DOCTYPE html>

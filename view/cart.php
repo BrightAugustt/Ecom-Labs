@@ -2,6 +2,8 @@
 
 include("../controllers/product_controller.php");
 session_start();
+$cid = $_SESSION['customer_id'];
+$count = count_cart_ctr($cid);
 ?>
 
 <!DOCTYPE html>
