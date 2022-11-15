@@ -35,11 +35,11 @@ include("../functions/add_to_cart.php");
       <td><img src="<?php echo ($item['product_image']); ?>" alt="" style="width: 50px;"> <?php echo($item['product_title']) ?></td>
       <td><?php echo('$'); echo($item['products.product_price*cart.qty']);?></td>
       <td>
-        <button id="pid" onclick="loadDoc(<?php echo $item['product_id'];?>)"></button>
+        <button id="pid" onclick="loadDoc1(<?php echo $item['product_id'];?>)"></button>
 
         <button><span><?php echo $item['qty'];?></span></button>
 
-        <button id="pin" onclick="loadDoc1(<?php echo $item['product_id'];?>)"></button>
+        <button id="pin" onclick="loadDoc(<?php echo $item['product_id'];?>)"></button>
       </td>
       <td>GHC 1300</td>
       <td>
@@ -56,7 +56,7 @@ include("../functions/add_to_cart.php");
 </table>
 </body>
 <script>
-                function loadDoc1(id){
+                function loadDoc(id){
                     inputbx= document.getElementByID("pin").value;
                     console.log(id);
                     dataString = 'pid='+ id +'&inputbx='+inputbx;
@@ -76,7 +76,7 @@ include("../functions/add_to_cart.php");
                 
             }
 
-            function loadDoc(id1){
+            function loadDoc1(id1){
                 inputbx1 = document.getElementByID("pid").value;
                 dataString= 'pid1='+id1+'&inputbx1='+inputbx1;
                 console.log(id1);
