@@ -35,15 +35,20 @@ $count = count_cart_ctr($cid);
     <tr>
       <!-- <th scope="row">1</th> -->
       <td><img src="../Background.png" alt="" style="width: 50px;"> <?php echo($item['product_title']) ?></td>
-      <td><?php echo('$'); echo($item['products.product_price*cart.qty']);?></td>
+      <td><?php echo('GHC'); echo($item['products.product_price*cart.qty']);?></td>
       <td>
-        <button id="pid" onclick="loadDoc1(<?php echo $item['product_id'];?>)"></button>
 
-        <button><span><?php echo $item['qty'];?></span></button>
-
-        <button id="pin" onclick="loadDoc(<?php echo $item['product_id'];?>)"></button>
+        <div class="input-group mb-3" style="width: 100px;">
+          <div class="input-group-prepend">
+            <button class="input-group-text" id="pid" onclick="loadDoc1(<?php echo $item['product_id'];?>)">-</button>
+          </div>
+          <input type="text" class="form-control text-center bg-white"  value="<?php echo $item['qty'];?>" disabled>
+          <div class="input-group-appnd">
+            <button class="input-group-text" id="pin" onclick="loadDoc(<?php echo $item['product_id'];?>)" >+</button>
+          </div>
+      </div>
       </td>
-      <td>GHC 1300</td>
+      <td><?php echo('GHC'); echo($item['products.product_price*cart.qty']); ?></td>
       <td>
       <form action="../functions/remove_from_cart.php" method="POST">
         <input type="hidden" name="p_id" value="<?php echo($item['product_id']);?>" >
@@ -57,6 +62,30 @@ $count = count_cart_ctr($cid);
     </tr>
   </tbody>
 </table>
+
+<div class="card border-dark mb-3" style="max-width: 18rem; margin: 0px 100px auto;">
+  <div class="card-header">Cart Summary</div>
+  <div class="card-body text-dark">
+  <?php
+    $get = get_from_cart_ctr($cid);
+    $total = total_cart_price_ctr($cid);
+    foreach ($get as $item){
+    
+    ?>
+    <h5 class="card-title">Subtotal</h5>
+    <p class="card-text">
+    <?php
+    echo $item['products.product_price*cart.qty'];
+    ?>
+     <?php } ?>
+     <h5>Total</h5>
+     GHC <?php echo $total["SUM(cart.qty*products.product_price)"] ?>
+    </p>
+    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">
+      <a href="Payment.php" class="pay2" type="submit">Proceed To Checkout</a>
+    </button>
+  </div>
+</div>
 </body>
 <script>
                 function loadDoc(id){

@@ -322,6 +322,12 @@ class product_class extends db_connection
 	return $this->db_fetch_one($sql);
 	}
 
+	function total_cart_price($a){
+        $sql = "SELECT SUM(cart.qty*products.product_price) FROM `cart` INNER JOIN `products` ON cart.p_id = products.product_id WHERE cart.c_id ='$a'";
+    
+        return $this->db_fetch_one($sql);
+     
+    }
 
 }
 ?>

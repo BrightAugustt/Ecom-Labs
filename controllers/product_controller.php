@@ -287,7 +287,10 @@ function get_cart_details_ctr($c_id){
 }
 
 
-
+function total_cart_price_ctr($a){
+    $get_total = new product_class();
+    return $get_total->total_cart_price($a);
+}
 
 
 
