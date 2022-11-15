@@ -1,8 +1,7 @@
 <?php
 
 include("../controllers/product_controller.php");
-include("../functions/add_to_cart.php");
-
+session_start();
 ?>
 
 <!DOCTYPE html>

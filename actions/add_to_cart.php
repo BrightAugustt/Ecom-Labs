@@ -10,7 +10,7 @@ if(isset($_POST['addToCart'])){
    $ip_add = $_SERVER['REMOVE_ADDR'];
    $qty = $_POST['qty'];
     
-   addcart_ctr($p_id,$_SERVER['REMOTE_ADDR'],$c_id,$qty);
+   addcart_ctr($p_id,$ip_add,$c_id,$qty);
    header('Location: ../view/cart.php');
 }
 
