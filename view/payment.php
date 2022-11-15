@@ -4,18 +4,12 @@ author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php require ("../controllers/product_controller.php");
- //require ("../controllers/cart_controller.php");
- require ('../settings/core.php');
-
-//  if(!is_user_logged_in()){
-//  header("location:../login/login.php");
-//  }
-$cid =$_SESSION['customer_id'];
+<?php 
+include ("../controllers/product_controller.php");
+session_start();
+$cid = $_SESSION['customer_id'];
 $count=count_cart_ctr($cid);
-// $total=total_cart_price_ctr($cid);
-
-
+$total=total_cart_price_ctr($cid);
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -61,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="wrapper_top_w3layouts">
 			<div class="header_agileits">
 				<div class="logo inner_page_log">
-					<h1><a class="navbar-brand" href="welome_page.php"><span>ALOC</span> <i></i></a></h1>
+					<h1><a class="navbar-brand" href="welome_page.php"><span>YESIDO</span> <i></i></a></h1>
 				</div>
 				<div class="overlay overlay-contentpush">
 					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>

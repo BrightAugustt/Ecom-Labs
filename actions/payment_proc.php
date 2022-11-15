@@ -5,7 +5,7 @@ $cid = $_SESSION['customer_id'];
 $email =$_POST['email'];
 $amount =$_POST['amount'];
 
-$url = "https://api.paystack.co/transaction/verify/$_GET['reference']";
+$url = "https://api.paystack.co/transaction/verify/".$_GET['reference'];
 
 $fields = [
 
@@ -23,7 +23,7 @@ curl_setopt($ch,CURLOPT_URL, $url);
 curl_setopt($ch,CURLOPT_POST, true);
 curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Authorization: sk_test_cd22aa0dd31f43894ea5f58a76a918f79d43dc4d",
+    "Authorization: Bearer sk_test_cd22aa0dd31f43894ea5f58a76a918f79d43dc4d",
     "Cache-Control: no-cache",
 ));
 
@@ -55,6 +55,23 @@ if($payment == true){
     echo "success";
 }else{
     echo"failed";
+}
+
+$cartd = get_cart_details_ctr($cid);
+$p_id = $cartd['p_id'];
+$qty = $cartd['qty'];
+
+$orderdetails = delete_after_pay_ctr($cid);
+
+if ($orderdetails == true){
+    echo "order details";
+}else{
+    echo "order not working";
+}
+
+$delcart = delete_after_pay_ctr($cid);
+if($delcart == true){
+
 }
 
 
