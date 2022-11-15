@@ -155,7 +155,7 @@ class product_class extends db_connection
 		// Write query
 		$sql =  "DELETE FROM `cart` WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
 		// Return  
-		return $this->db_fetch_all($sql);
+		return $this->db_query($sql);
 	}
 
 	public function add_cart($p_id,$ip_add,$c_id,$qty){

@@ -45,7 +45,7 @@ $count = count_cart_ctr($cid);
       </td>
       <td>GHC 1300</td>
       <td>
-      <form action="../functions/remove_from_cart.php">
+      <form action="../functions/remove_from_cart.php" method="POST">
         <input type="hidden" name="p_id" value="<?php echo($item['product_id']);?>" >
         <!-- <button name="deleteCart" ></button> -->
         <input type="submit" name="deleteCart" value="Delete">
