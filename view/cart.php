@@ -27,11 +27,12 @@ $count = count_cart_ctr($cid);
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <?php
+  <?php
     $cart=  get_from_cart_ctr($_SESSION['customer_id']);
     foreach($cart as $item){
     ?>
+
+    <tr>
       <!-- <th scope="row">1</th> -->
       <td><img src="../Background.png" alt="" style="width: 50px;"> <?php echo($item['product_title']) ?></td>
       <td><?php echo('$'); echo($item['products.product_price*cart.qty']);?></td>
@@ -46,7 +47,8 @@ $count = count_cart_ctr($cid);
       <td>
       <form action="../functions/remove_from_cart.php">
         <input type="hidden" name="p_id" value="<?php echo($item['product_id']);?>" >
-        <button name="deleteCart" ></button>
+        <!-- <button name="deleteCart" ></button> -->
+        <input type="submit" name="deleteCart" value="Delete">
       </form>
       </td>
       <?php
