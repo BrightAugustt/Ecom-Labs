@@ -14,7 +14,7 @@ if(isset($_POST['addToCart'])){
    if($add == true){
       header('Location: ../view/cart.php');
    }else{
-      echo "couldn't add to cart."
+      echo "couldn't add to cart.";
    }
   
 }
