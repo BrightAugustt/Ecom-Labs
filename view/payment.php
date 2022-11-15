@@ -208,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             },
             callback: function(response){
             
-            let message = 'Payment complete! Reference: '+ response.ref
+            let message = 'Payment complete! Reference: '+ response.reference
             
             console.log(response.status);
             
@@ -217,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 console.log(email);
                 console.log(amount5);
 
-            dataString = 'email='+ email +'&amount5='+amount5;
+            dataString = 'email='+ email +'&amount5='+amount5+ '&ref=' + response.reference + '&res=' + response.status;
         if (response.status=='success') {
             $.ajax({
                 type:"POST",
