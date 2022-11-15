@@ -8,7 +8,7 @@ include("../controllers/product_controller.php");
 // include("../settings/core.php");
 $cid = $_SESSION['id'];
 $count = count_cart_ctr($cid);
-$customer=$_GET 
+
 ?>
 
 <!DOCTYPE html>
