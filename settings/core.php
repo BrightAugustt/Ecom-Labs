@@ -1,6 +1,5 @@
 <?php
 //start session
-session_start(); 
 
 //for header redirection
 ob_start();

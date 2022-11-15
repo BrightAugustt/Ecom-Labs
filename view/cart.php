@@ -2,7 +2,7 @@
 
 include("../controllers/product_controller.php");
 session_start();
-$cid = $_SESSION['customer_id'];
+$cid = $_SESSION['id'];
 $count = count_cart_ctr($cid);
 ?>
 
@@ -29,7 +29,7 @@ $count = count_cart_ctr($cid);
   <tbody>
     <tr>
     <?php
-    $cart=  get_from_cart_ctr($_SESSION['customer_id']);
+    $cart=  get_from_cart_ctr($_SESSION['id']);
     foreach($cart as $item){
     ?>
       <!-- <th scope="row">1</th> -->

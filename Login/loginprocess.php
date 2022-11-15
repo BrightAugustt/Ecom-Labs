@@ -33,7 +33,7 @@ if(isset($_POST["login"])){
                 $_SESSION['customer_email'] = $login['cemail'];
                 $_SESSION['user_role'] = $login['user_role'];
                 // redirect to login
-                   header('Location:home.php');
+                   header('Location:../view/all_product.php');
             }
             
 
