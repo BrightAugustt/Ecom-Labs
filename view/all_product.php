@@ -33,7 +33,7 @@ include("../settings/core.php");
         </form>
         </nav>
         </div>
-        <form action="../actions/add_to_cart.php" method="POST">
+        <form method="POST" action="../actions/add_to_cart.php">
             <div class="card" style="width: 18rem;">
             
                 <a href="single_product.php?product_id=<?php echo($item['product_id'])?>">
@@ -44,7 +44,7 @@ include("../settings/core.php");
                 <h5 class="card-text">GHC<?php echo($item['product_price'])?></h5>
                 <p class="card-text"><?php echo ($item['product_desc'])?></p>
                 <input type="hidden" id="pid" value="<?php echo $item["product_id"]?>">
-                <a href="#" class="btn btn-primary addToCartBtn" onclick="loadDoc(<?php echo $item['product_id']?>)">Add to cart</a>
+                <button type="submit" name="addToCart">Add to cart</button>
                 <input type="hidden" name="qty" value=1>
 
                 <?php
@@ -54,7 +54,7 @@ include("../settings/core.php");
     
             </div>
         </form>
-            <script>
+            <!-- <script>
                 function loadDoc(id){
                     inputbx=document.getElementByID("pin").value;
                     console.log(id);
@@ -74,7 +74,7 @@ include("../settings/core.php");
                 });
                 
             }
-            </script>
+            </script> -->
         
         
         ?>
