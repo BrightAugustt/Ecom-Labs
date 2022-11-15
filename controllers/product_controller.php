@@ -134,12 +134,12 @@ function searchproduct_ctr($product_brand){
 
 }
 
-function addcart_ctr($ip_add,$c_id,$qty){
+function addcart_ctr($p_id,$ip_add,$c_id,$qty){
 
     // Create an instance of the product class. 
     $addcart= new product_class();
 
-     return $addcart->add_cart($ip_add,$c_id,$qty);
+     return $addcart->add_cart($p_id,$ip_add,$c_id,$qty);
 
 }
 
